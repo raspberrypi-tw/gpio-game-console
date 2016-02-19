@@ -18,14 +18,14 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 PIR_PIN = 26
-BOUNCE_TIME = 200
-GPIO.setup(PIR_PIN, GPIO.IN)
+WAIT_TIME = 200
+GPIO.setup(PIR_PIN, GPIO.IN, pull_up_down=PUD_DOWN)
 
-def callback_function(channel):
-    print "Motion detected! ", time.strftime("%H:%M:%S")
+def mycallback(channel):
+    print "Motion detected @", time.ctime()
 
 try:
-    GPIO.add_event_detect(PIR_PIN, GPIO.RISING, callback=callback_function, bouncetime=BOUNCE_TIME)
+    GPIO.add_event_detect(PIR_PIN, GPIO.RISING, callback=mycallback, bouncetime=WAIT_TIME)
 
     while True:
         time.sleep(1)

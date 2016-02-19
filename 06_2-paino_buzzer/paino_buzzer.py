@@ -35,17 +35,17 @@ MELODY_SO = 784
 MELODY_LA = 880
 MELODY_SI = 988
 
-BOUNCE_TIME = 200
+WAIT_TIME = 200
 DURATION = 0.2
 
 GPIO.setup(BUZZER_PIN, GPIO.OUT)
-GPIO.setup(BTN_PIN_0,  GPIO.IN)
-GPIO.setup(BTN_PIN_1,  GPIO.IN)
-GPIO.setup(BTN_PIN_2,  GPIO.IN)
-GPIO.setup(BTN_PIN_3,  GPIO.IN)
-GPIO.setup(BTN_PIN_4,  GPIO.IN)
-GPIO.setup(BTN_PIN_5,  GPIO.IN)
-GPIO.setup(BTN_PIN_6,  GPIO.IN)
+GPIO.setup(BTN_PIN_0,  GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BTN_PIN_1,  GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BTN_PIN_2,  GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BTN_PIN_3,  GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BTN_PIN_4,  GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BTN_PIN_5,  GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BTN_PIN_6,  GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def buzz(pitch) :
     period = 1.0 / pitch
@@ -58,8 +58,8 @@ def buzz(pitch) :
         GPIO.output(BUZZER_PIN, GPIO.LOW)
         time.sleep(delay)
 
-def callback_function(channel):
-    print("Button.Click:"), channel, time.strftime(",%Y-%m-%d %H:%M:%S")
+def mycallback(channel):
+    print("Button pressed @:"), channel, time.ctime()
 
     if channel == BTN_PIN_0:
         buzz(MELODY_DO)
@@ -77,13 +77,13 @@ def callback_function(channel):
         buzz(MELODY_SI)
 
 try:
-    GPIO.add_event_detect(BTN_PIN_0, GPIO.FALLING, callback=callback_function, bouncetime=BOUNCE_TIME)
-    GPIO.add_event_detect(BTN_PIN_1, GPIO.FALLING, callback=callback_function, bouncetime=BOUNCE_TIME)
-    GPIO.add_event_detect(BTN_PIN_2, GPIO.FALLING, callback=callback_function, bouncetime=BOUNCE_TIME)
-    GPIO.add_event_detect(BTN_PIN_3, GPIO.FALLING, callback=callback_function, bouncetime=BOUNCE_TIME)
-    GPIO.add_event_detect(BTN_PIN_4, GPIO.FALLING, callback=callback_function, bouncetime=BOUNCE_TIME)
-    GPIO.add_event_detect(BTN_PIN_5, GPIO.FALLING, callback=callback_function, bouncetime=BOUNCE_TIME)
-    GPIO.add_event_detect(BTN_PIN_6, GPIO.FALLING, callback=callback_function, bouncetime=BOUNCE_TIME)
+    GPIO.add_event_detect(BTN_PIN_0, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)
+    GPIO.add_event_detect(BTN_PIN_1, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)
+    GPIO.add_event_detect(BTN_PIN_2, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)
+    GPIO.add_event_detect(BTN_PIN_3, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)
+    GPIO.add_event_detect(BTN_PIN_4, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)
+    GPIO.add_event_detect(BTN_PIN_5, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)
+    GPIO.add_event_detect(BTN_PIN_6, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)
 
     while True:
         time.sleep(1)

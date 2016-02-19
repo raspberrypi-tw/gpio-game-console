@@ -17,9 +17,9 @@ import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BOARD)
-RED_PIN = 11    # GPIO0
-YEL_PIN = 12    # GPIO1
-GRN_PIN = 13    # GPIO2
+RED_PIN = 11    # GPIO17
+YEL_PIN = 12    # GPIO18
+GRN_PIN = 13    # GPIO27
 
 GPIO.setup(RED_PIN, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(YEL_PIN, GPIO.OUT, initial=GPIO.LOW)

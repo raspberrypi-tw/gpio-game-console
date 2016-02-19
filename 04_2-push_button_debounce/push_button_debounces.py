@@ -8,7 +8,8 @@
 # found in the LICENSE file.
 #
 # push_button_debounces.py
-# Response when push button is pressed with poll way, and de-bounces by software
+# Response when push button is pressed with poll way, and de-bounces by 
+# software
 #
 # Author : sosorry
 # Date   : 06/22/2014
@@ -18,16 +19,16 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 BTN_PIN = 11
-TIME_LAPSE = 0.2
+WAIT_TIME = 0.2
 GPIO.setup(BTN_PIN, GPIO.IN)
 previousTime = time.time()
 
 try:
     while True:
         currentTime = time.time()
-        if GPIO.input(BTN_PIN) == GPIO.LOW and (currentTime - previousTime) > TIME_LAPSE:
+        if GPIO.input(BTN_PIN) == GPIO.LOW and (currentTime - previousTime) > WAIT_TIME:
             previousTime = currentTime
-            print("Button pressed"), time.strftime("%Y-%m-%d %H:%M:%S")
+            print("Button pressed @"), time.ctime()
 
 except KeyboardInterrupt:
     print "Exception: KeyboardInterrupt"

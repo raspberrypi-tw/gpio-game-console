@@ -8,7 +8,8 @@
 # found in the LICENSE file.
 #
 # push_button_control_led.py
-# Turn on the led when push button is pressed with interrupt way, and de-bounces by software
+# Turn on the led when push button is pressed with interrupt way, and 
+# de-bounces by software
 #
 # Author : sosorry
 # Date   : 06/22/2014
@@ -19,13 +20,13 @@ import time
 GPIO.setmode(GPIO.BOARD)                
 BTN_PIN = 11
 LED_PIN = 12				
-BOUNCE_TIME = 200
+WAIT_TIME = 200
 status = GPIO.LOW
-GPIO.setup(BTN_PIN, GPIO.IN)
+GPIO.setup(BTN_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(LED_PIN, GPIO.OUT, initial=status) 
 
-def callback_function(channel):                                                 
-	print("Button pressed"), time.strftime("%Y-%m-%d %H:%M:%S")
+def mycallback(channel):                                                 
+	print("Button pressed @"), time.ctime()
 	global status
 	if status == GPIO.LOW:
 		status = GPIO.HIGH
@@ -34,7 +35,7 @@ def callback_function(channel):
 	GPIO.output(LED_PIN, status)
 
 try:
-	GPIO.add_event_detect(BTN_PIN, GPIO.FALLING, callback=callback_function, bouncetime=BOUNCE_TIME)
+	GPIO.add_event_detect(BTN_PIN, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)
 
 	while True:
 		time.sleep(10)

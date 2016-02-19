@@ -30,10 +30,10 @@ def measure() :
     GPIO.output(TRIGGER_PIN, GPIO.LOW)
     pulse_start = time.time()
 
-    while GPIO.input(ECHO_PIN) == 0:
+    while GPIO.input(ECHO_PIN) == GPIO.LOW:
         pulse_start = time.time()
 
-    while GPIO.input(ECHO_PIN) == 1:
+    while GPIO.input(ECHO_PIN) == GPIO.HIGH:
         pulse_end = time.time()
 
     t = pulse_end - pulse_start

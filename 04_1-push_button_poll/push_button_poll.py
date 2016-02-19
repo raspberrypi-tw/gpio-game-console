@@ -23,7 +23,7 @@ GPIO.setup(BTN_PIN, GPIO.IN)
 try:
     while True:
         if GPIO.input(BTN_PIN) == GPIO.LOW:
-            print("Button pressed"), time.strftime("%Y-%m-%d %H:%M:%S")
+            print("Button pressed @"), time.ctime()
 
 except KeyboardInterrupt:
     print "Exception: KeyboardInterrupt"

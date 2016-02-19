@@ -7,12 +7,12 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
-# push_button_interrupt.py
+# push_button_internal_pull_up
 # Response when push button is pressed with interrupt way, and de-bounces 
-# by software
+# by software. The GPIO input uses the internal pull-up resistor(50k).
 #
 # Author : sosorry
-# Date   : 06/22/2014
+# Date   : 02/11/2016
 
 import RPi.GPIO as GPIO                 
 import time
@@ -20,7 +20,7 @@ import time
 GPIO.setmode(GPIO.BOARD)                
 BTN_PIN = 11
 WAIT_TIME = 200
-GPIO.setup(BTN_PIN, GPIO.IN)
+GPIO.setup(BTN_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def mycallback(channel):                                                 
     print("Button pressed @"), time.ctime()
