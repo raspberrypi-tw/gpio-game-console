@@ -7,8 +7,8 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 #
-# push_button_debounces.py
-# Response when push button is pressed with poll way, and de-bounces by 
+# push_button_debounce.py
+# Response when push button is pressed with poll way, and de-bounce by 
 # software
 #
 # Author : sosorry
