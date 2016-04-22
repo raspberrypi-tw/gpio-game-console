@@ -19,7 +19,7 @@ import time
 GPIO.setmode(GPIO.BOARD)
 PIR_PIN = 26
 WAIT_TIME = 200
-GPIO.setup(PIR_PIN, GPIO.IN, pull_up_down=PUD_DOWN)
+GPIO.setup(PIR_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 def mycallback(channel):
     print "Motion detected @", time.ctime()
