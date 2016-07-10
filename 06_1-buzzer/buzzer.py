@@ -21,13 +21,13 @@ GPIO.setup(buzzer_pin, GPIO.OUT)
 
 def buzz(pitch, duration) :
     period = 1.0 / pitch
-    delay = period / 2
+    half_period = period / 2
     cycles = int(duration * pitch)
-    for i in range(cycles) :
+    for i in xrange(cycles) :
         GPIO.output(buzzer_pin, GPIO.HIGH)
-        time.sleep(delay)
+        time.sleep(half_period)
         GPIO.output(buzzer_pin, GPIO.LOW)
-        time.sleep(delay)
+        time.sleep(half_period)
 
 try:
     while True :

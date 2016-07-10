@@ -52,7 +52,7 @@ def buzz(pitch) :
     delay = period / 2
     cycles = int(DURATION * pitch)
 
-    for i in range(cycles) :
+    for i in xrange(cycles) :
         GPIO.output(BUZZER_PIN, GPIO.HIGH)
         time.sleep(delay)
         GPIO.output(BUZZER_PIN, GPIO.LOW)
