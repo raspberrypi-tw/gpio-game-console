@@ -49,14 +49,14 @@ GPIO.setup(BTN_PIN_6,  GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def buzz(pitch) :
     period = 1.0 / pitch
-    delay = period / 2
+    half_period = period / 2
     cycles = int(DURATION * pitch)
 
     for i in xrange(cycles) :
         GPIO.output(BUZZER_PIN, GPIO.HIGH)
-        time.sleep(delay)
+        time.sleep(half_period)
         GPIO.output(BUZZER_PIN, GPIO.LOW)
-        time.sleep(delay)
+        time.sleep(half_period)
 
 def mycallback(channel):
     print("Button pressed @:"), channel, time.ctime()
