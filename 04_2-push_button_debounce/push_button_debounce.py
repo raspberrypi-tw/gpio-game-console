@@ -21,14 +21,18 @@ GPIO.setmode(GPIO.BOARD)
 BTN_PIN = 11
 WAIT_TIME = 0.2
 GPIO.setup(BTN_PIN, GPIO.IN)
+previousStatus = None
 previousTime = time.time()
+currentTime  = None
 
 try:
     while True:
+        input = GPIO.input(BTN_PIN)
         currentTime = time.time()
-        if GPIO.input(BTN_PIN) == GPIO.LOW and (currentTime - previousTime) > WAIT_TIME:
+        if input == GPIO.LOW and previousStatus == GPIO.HIGH and (currentTime - previousTime) > WAIT_TIME:
             previousTime = currentTime
             print("Button pressed @"), time.ctime()
+        previousStatus = input
 
 except KeyboardInterrupt:
     print "Exception: KeyboardInterrupt"
