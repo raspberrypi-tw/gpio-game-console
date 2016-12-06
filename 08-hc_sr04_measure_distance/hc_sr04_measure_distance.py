@@ -57,7 +57,7 @@ def measure_average() :
 try :
     while True:
         distance = measure_average()
-        print "Distance : %.1f" (cm)% distance
+        print "Distance : %.1f (cm)" % distance
         time.sleep(1)
 
 except KeyboardInterrupt:
