@@ -59,7 +59,7 @@ def buzz(pitch) :
         time.sleep(half_period)
 
 def mycallback(channel):
-    print("Button pressed @:"), channel, time.ctime()
+    print "Button pressed @:", channel, time.ctime()
 
     if channel == BTN_PIN_0:
         buzz(MELODY_DO)

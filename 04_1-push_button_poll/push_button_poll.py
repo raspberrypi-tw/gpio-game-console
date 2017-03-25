@@ -25,7 +25,7 @@ try:
     while True:
         input = GPIO.input(BTN_PIN)
         if input == GPIO.LOW and previousStatus == GPIO.HIGH:
-            print("Button pressed @"), time.ctime()
+            print "Button pressed @", time.ctime()
         previousStatus = input
 
 except KeyboardInterrupt:

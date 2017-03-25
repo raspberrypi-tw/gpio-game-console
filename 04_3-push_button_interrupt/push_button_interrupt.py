@@ -23,7 +23,7 @@ WAIT_TIME = 200
 GPIO.setup(BTN_PIN, GPIO.IN)
 
 def mycallback(channel):                                                 
-    print("Button pressed @"), time.ctime()
+    print "Button pressed @", time.ctime()
 
 try:
     GPIO.add_event_detect(BTN_PIN, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)

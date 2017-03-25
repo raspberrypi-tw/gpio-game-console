@@ -22,11 +22,11 @@ BTN_PIN = 11
 LED_PIN = 12				
 WAIT_TIME = 200
 status = GPIO.LOW
-GPIO.setup(BTN_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BTN_PIN, GPIO.IN,  pull_up_down=GPIO.PUD_UP)
 GPIO.setup(LED_PIN, GPIO.OUT, initial=status) 
 
 def mycallback(channel):                                                 
-	print("Button pressed @"), time.ctime()
+	print "Button pressed @", time.ctime()
 	global status
 	if status == GPIO.LOW:
 		status = GPIO.HIGH

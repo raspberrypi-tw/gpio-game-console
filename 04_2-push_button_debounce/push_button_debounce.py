@@ -31,7 +31,7 @@ try:
         currentTime = time.time()
         if input == GPIO.LOW and previousStatus == GPIO.HIGH and (currentTime - previousTime) > WAIT_TIME:
             previousTime = currentTime
-            print("Button pressed @"), time.ctime()
+            print "Button pressed @", time.ctime()
         previousStatus = input
 
 except KeyboardInterrupt:

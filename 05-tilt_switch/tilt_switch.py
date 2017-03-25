@@ -23,7 +23,7 @@ WAIT_TIME = 200
 GPIO.setup(BTN_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def mycallback(channel):                                                 
-    print("Switch tilted @"), time.ctime()
+    print "Switch tilted @", time.ctime()
 
 try:
     GPIO.add_event_detect(BTN_PIN, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)

@@ -28,7 +28,8 @@ def measure() :
     GPIO.output(TRIGGER_PIN, GPIO.HIGH)
     time.sleep(0.00001)	# 10uS 
     GPIO.output(TRIGGER_PIN, GPIO.LOW)
-    pulse_start = time.time()
+    pulse_start = None
+    pulse_end   = None
 
     while GPIO.input(ECHO_PIN) == GPIO.LOW:
         pulse_start = time.time()
@@ -57,7 +58,7 @@ def measure_average() :
 try :
     while True:
         distance = measure_average()
-        print "Distance : %.1f (cm)" % distance
+        print "Distance: %.1f (cm)" % distance
         time.sleep(1)
 
 except KeyboardInterrupt:
