@@ -46,30 +46,36 @@ try:
         if vry_pos > 700 :
             ui.write(e.EV_KEY, e.KEY_LEFT,  1)  
             ui.write(e.EV_KEY, e.KEY_RIGHT, 0)
+            time.sleep(0.05)
             ui.syn()
         # RIGHT
         elif vry_pos < 200 :
             ui.write(e.EV_KEY, e.KEY_RIGHT, 1)
             ui.write(e.EV_KEY, e.KEY_LEFT,  0)
+            time.sleep(0.05)
             ui.syn()
         else :
             ui.write(e.EV_KEY, e.KEY_RIGHT, 0)
             ui.write(e.EV_KEY, e.KEY_LEFT,  0)
+            time.sleep(0.05)
             ui.syn()
 
         # DOWN
         if vrx_pos > 700 :
             ui.write(e.EV_KEY, e.KEY_DOWN,  1)  
             ui.write(e.EV_KEY, e.KEY_UP,    0)
+            time.sleep(0.05)
             ui.syn()
         # UP
         elif vrx_pos < 200 :
             ui.write(e.EV_KEY, e.KEY_DOWN, 0)
             ui.write(e.EV_KEY, e.KEY_UP,   1)
+            time.sleep(0.05)
             ui.syn()
         else :
             ui.write(e.EV_KEY, e.KEY_DOWN, 0)
             ui.write(e.EV_KEY, e.KEY_UP,   0)
+            time.sleep(0.05)
             ui.syn()
 
         time.sleep(0.1)
