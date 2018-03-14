@@ -23,6 +23,7 @@ import RPi.GPIO as GPIO
 ui = UInput()
 spi = spidev.SpiDev()
 spi.open(0,0)
+spi.max_speed_hz = 1800000
 
 JUMP_PIN = 12
 FIRE_PIN = 7

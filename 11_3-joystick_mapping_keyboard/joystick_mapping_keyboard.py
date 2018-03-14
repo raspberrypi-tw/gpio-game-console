@@ -23,6 +23,7 @@ import RPi.GPIO as GPIO
 ui = UInput()
 spi = spidev.SpiDev()
 spi.open(0,0)
+spi.max_speed_hz = 1800000
 
 swt_channel = 0
 vrx_channel = 1 

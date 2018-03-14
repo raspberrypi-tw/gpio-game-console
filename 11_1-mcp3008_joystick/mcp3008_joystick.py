@@ -19,6 +19,7 @@ import os
 # Open SPI bus
 spi = spidev.SpiDev()
 spi.open(0,0)
+spi.max_speed_hz = 1800000
 
 # Function to read SPI data from MCP3008 chip
 # Channel must be an integer 0-7
