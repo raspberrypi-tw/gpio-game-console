@@ -16,6 +16,7 @@ import os
 
 spi = spidev.SpiDev()
 spi.open(0,0)
+spi.max_speed_hz = 1800000
 
 def ReadChannel(channel):
     adc = spi.xfer2([1, (8+channel)<<4, 0])
