@@ -24,7 +24,7 @@ $ sudo pip install spidev evdev
 1. Download pre-built emultation
 ```shell  
 $ cd ~
-$ wget http://sosorry.s3.amazonaws.com/raspberrypi/code/advmame
+$ wget http://bit.ly/2OnUMwh -O ~/advmame
 ```
 
 2. Create RC file
@@ -36,6 +36,6 @@ $ ./advmame
 
 3. Download Super Mario ROM
 ```shell  
-$ cd /home/pi/.advance/rom
-$ wget http://sosorry.s3.amazonaws.com/download/suprmrio.zip
+$ cd ~
+$ wget http://bit.ly/2K1dhUb -O ~/.advance/rom/suprmrio.zip
 ```
