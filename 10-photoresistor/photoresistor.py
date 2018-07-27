@@ -35,9 +35,10 @@ try:
     while True:
         light_level = ReadChannel(light_channel)
         light_volts = ConvertVolts(light_level, 2)
+        resistor_ohms = int(light_volts/(3.3 - light_volts) * 1000)
 
         print "--------------------------------------------"
-        print("Light: {} ({}V)".format(light_level,light_volts))
+        print("Light: {} ({}V), Resistor: {}(ohms)".format(light_level,light_volts, resistor_ohms))
 
         time.sleep(delay)
 
