@@ -21,7 +21,7 @@ LED_PIN = 12
 GPIO.setup(LED_PIN, GPIO.OUT)
 
 pwm_led = GPIO.PWM(LED_PIN, 100)
-pwm_led.start(100)
+pwm_led.start(0)
 
 try:
     while True:
