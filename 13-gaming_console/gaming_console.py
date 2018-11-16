@@ -64,8 +64,8 @@ try:
         vrx_pos = ReadChannel(vrx_channel)
         vry_pos = ReadChannel(vry_channel)
 
-        #print "--------------------------------------------"  
-        #print("X : {}  Y : {}  Switch : {}".format(vrx_pos,vry_pos,swt_val))
+        print "--------------------------------------------"  
+        print("X : {}  Y : {}  Switch : {}".format(vrx_pos,vry_pos,swt_val))
 
         # LEFT
         if vry_pos > 700 :
