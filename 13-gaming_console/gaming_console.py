@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #|R|a|s|p|b|e|r|r|y|P|i|.|c|o|m|.|t|w|
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-# Copyright (c) 2016, raspberrypi.com.tw
+# Copyright (c) 2019, raspberrypi.com.tw
 # All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -11,7 +11,7 @@
 # A GPIO joystick with two buttons that can simulate the key events
 #
 # Author : sosorry
-# Date   : 2016/02/20
+# Date   : 2019/02/20
 # Origin : http://python-evdev.readthedocs.org/en/latest/tutorial.html
 
 from evdev import UInput, ecodes as e
@@ -64,7 +64,7 @@ try:
         vrx_pos = ReadChannel(vrx_channel)
         vry_pos = ReadChannel(vry_channel)
 
-        print "--------------------------------------------"  
+        print("--------------------------------------------")
         print("X : {}  Y : {}  Switch : {}".format(vrx_pos,vry_pos,swt_val))
 
         # LEFT
@@ -106,6 +106,6 @@ try:
         time.sleep(0.1)
 
 except KeyboardInterrupt:
-    print "Exception: KeyboardInterrupt"
+    print("Exception: KeyboardInterrupt")
 
 

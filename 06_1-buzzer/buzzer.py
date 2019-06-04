@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #|R|a|s|p|b|e|r|r|y|P|i|.|c|o|m|.|t|w|
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-# Copyright (c) 2016, raspberrypi.com.tw
+# Copyright (c) 2019, raspberrypi.com.tw
 # All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -14,6 +14,11 @@
 
 import RPi.GPIO as GPIO
 import time
+
+try:
+    input = raw_input
+except NameError:
+    pass
 
 buzzer_pin = 12
 GPIO.setmode(GPIO.BOARD)
@@ -31,12 +36,12 @@ def buzz(pitch, duration) :
 
 try:
     while True :
-        pitch_s = raw_input("Enter Pitch (200 to 2000): ")
-        duration_s = raw_input("Enter Duration (seconde): ")
+        pitch_s = input("Enter Pitch (200 to 2000): ")
+        duration_s = input("Enter Duration (seconde): ")
         buzz(float(pitch_s), float(duration_s))
 
 except KeyboardInterrupt:
-    print "Exception: KeyboardInterrupt"
+    print("Exception: KeyboardInterrupt")
 
 finally:
     GPIO.cleanup()          

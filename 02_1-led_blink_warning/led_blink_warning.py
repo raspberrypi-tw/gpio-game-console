@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #|R|a|s|p|b|e|r|r|y|P|i|.|c|o|m|.|t|w|
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-# Copyright (c) 2016, raspberrypi.com.tw
+# Copyright (c) 2019, raspberrypi.com.tw
 # All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -21,11 +21,11 @@ LED_PIN = 12
 GPIO.setup(LED_PIN, GPIO.OUT)
 
 while True:
-    print "LED is on"
+    print("LED is on")
     GPIO.output(LED_PIN, GPIO.HIGH)
     time.sleep(1)
 
-    print "LED is off"
+    print("LED is off")
     GPIO.output(LED_PIN, GPIO.LOW)
     time.sleep(1)
 

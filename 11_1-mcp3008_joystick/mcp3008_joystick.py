@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #--------------------------------------   
 # This script reads data from a 
 # MCP3008 ADC device using the SPI bus.
@@ -47,7 +47,7 @@ while True:
     swt_val = ReadChannel(swt_channel)
 
     # Print out results
-    print "--------------------------------------------"  
+    print("--------------------------------------------"  )
     print("X : {}  Y : {}  Switch : {}".format(vrx_pos,vry_pos,swt_val))
 
     # Wait before repeating loop

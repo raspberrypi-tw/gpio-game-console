@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #|R|a|s|p|b|e|r|r|y|P|i|.|c|o|m|.|t|w|
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-# Copyright (c) 2016, raspberrypi.com.tw
+# Copyright (c) 2019, raspberrypi.com.tw
 # All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -23,7 +23,7 @@ WAIT_TIME = 200
 GPIO.setup(BTN_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def mycallback(channel):                                                 
-    print "Switch tilted @", time.ctime()
+    print("Switch tilted @", time.ctime())
 
 try:
     GPIO.add_event_detect(BTN_PIN, GPIO.FALLING, callback=mycallback, bouncetime=WAIT_TIME)
@@ -32,7 +32,7 @@ try:
         time.sleep(1)
 
 except KeyboardInterrupt:
-    print "Exception: KeyboardInterrupt"
+    print("Exception: KeyboardInterrupt")
 
 finally:
     GPIO.cleanup()          

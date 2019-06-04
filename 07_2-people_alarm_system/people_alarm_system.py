@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #|R|a|s|p|b|e|r|r|y|P|i|.|c|o|m|.|t|w|
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-# Copyright (c) 2016, raspberrypi.com.tw
+# Copyright (c) 2019, raspberrypi.com.tw
 # All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -24,7 +24,7 @@ GPIO.setup(PIR_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(LED_PIN, GPIO.OUT)
 
 def mycallback(channel):
-    print "Motion detected @", time.ctime()
+    print("Motion detected @", time.ctime())
     blink_led()
 
 def blink_led():
@@ -41,7 +41,7 @@ try:
         time.sleep(1)
 
 except KeyboardInterrupt:
-    print "Exception: KeyboardInterrupt"
+    print("Exception: KeyboardInterrupt")
 
 finally:
     GPIO.cleanup()                              

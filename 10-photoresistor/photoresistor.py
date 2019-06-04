@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #|R|a|s|p|b|e|r|r|y|P|i|.|c|o|m|.|t|w|
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -36,7 +36,7 @@ try:
         light_level = ReadChannel(light_channel)
         light_volts = ConvertVolts(light_level, 2)
 
-        print "--------------------------------------------"
+        print("--------------------------------------------")
         print("Light: {} ({}V)".format(light_level,light_volts))
         #resistor_ohms = int(light_volts/(3.3 - light_volts) * 1000)
         #print("Light: {} ({}V), Resistor: {}(ohms)".format(light_level,light_volts, resistor_ohms))
@@ -44,5 +44,5 @@ try:
         time.sleep(delay)
 
 except KeyboardInterrupt:
-    print "Exception: KeyboardInterrupt"
+    print("Exception: KeyboardInterrupt")
 
