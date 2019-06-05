@@ -22,7 +22,7 @@ BTN_PIN = 11
 WAIT_TIME = 200
 GPIO.setup(BTN_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-def mycallback(channel):                                                 
+def mycallback(channel):
     print("Button pressed @", time.ctime())
 
 try:

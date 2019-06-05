@@ -28,7 +28,7 @@ def buzz(pitch, duration) :
     period = 1.0 / pitch
     half_period = period / 2
     cycles = int(duration * pitch)
-    for i in xrange(cycles) :
+    for i in range(cycles) :
         GPIO.output(buzzer_pin, GPIO.HIGH)
         time.sleep(half_period)
         GPIO.output(buzzer_pin, GPIO.LOW)

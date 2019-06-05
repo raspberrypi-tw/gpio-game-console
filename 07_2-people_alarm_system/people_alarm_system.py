@@ -28,7 +28,7 @@ def mycallback(channel):
     blink_led()
 
 def blink_led():
-    for i in xrange(3) :
+    for i in range(3) :
         GPIO.output(LED_PIN, GPIO.HIGH)
         time.sleep(0.5)
         GPIO.output(LED_PIN, GPIO.LOW)
