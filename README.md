@@ -1,8 +1,6 @@
 # One Day Workshop for Raspberry Pi GPIO Tutorial
 
-steps:
-- title: Demo for GPIO Game Console Workshop
-  video: https://www.youtube.com/embed/MudTVTIHFDY
+[![Demo for GPIO Game Console Workshop](http://i3.ytimg.com/vi/MudTVTIHFDY/maxresdefault.jpg)](https://www.youtube.com/watch?v=MudTVTIHFDY "Demo for GPIO Game Console Workshop")
 
 ## Intro
 In this workshop, we will introudce the Raspberry Pi GPIO, including:
