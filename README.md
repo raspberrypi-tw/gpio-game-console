@@ -12,14 +12,14 @@ The slide is available on [用Raspberry Pi學GPIO - 自己做遊戲機](https://
 
 
 ## Environment
-[Raspberry Pi 3B](https://www.raspberrypi.com.tw/10684/55/)/[Raspberry Pi 3B+](https://www.raspberrypi.com.tw/19429/57/) + SanDisk 32G microSD  + [Raspberry Pi GPIO Game Console Kit](https://www.raspberrypi.com.tw/2557/gpio-game-console-starter-kit/) + 2017-11-29-raspbian-stretch.img
+[Raspberry Pi 4B/2G](https://www.raspberrypi.com.tw/28040/raspberry-pi-4-model-b/)/[Raspberry Pi 3B+](https://www.raspberrypi.com.tw/19429/57/) + SanDisk 32G microSD  + [Raspberry Pi GPIO Game Console Kit](https://www.raspberrypi.com.tw/2557/gpio-game-console-starter-kit/) + 2020-02-13-raspbian-buster-full.img
 
 ## Prerequisite
 ### Install required package and Python module
 ```shell  
 $ sudo apt-get update
-$ sudo apt-get install -y x11vnc python-dev python-pip libsdl1.2-dev 
-$ sudo pip install spidev evdev
+$ sudo apt-get install -y x11vnc python3-dev python3-pip libsdl1.2-dev 
+$ sudo pip3 install spidev evdev
 ```
 
 ### Emulator
@@ -43,6 +43,6 @@ $ wget http://bit.ly/2K1dhUb -O ~/.advance/rom/suprmrio.zip
 ```
 
 ## Buy Raspberry Pi and GPIO Starter Kit
-* [Raspberry Pi 3 Model B+ 入門組](https://www.raspberrypi.com.tw/21212/pi-3-b-plus-microsd-power-supply/)
+* [【Pi 4套餐B】Raspberry Pi 4 Model B/2G + SanDisk 32G microSD卡 + 官方原廠5.1V/3A電源](https://www.raspberrypi.com.tw/31200/pi4b-2g-microsd-power-supply/)
 * [GPIO Starter Kit](https://www.raspberrypi.com.tw/2557/gpio-game-console-starter-kit/)
 * [More...](https://www.raspberrypi.com.tw/purchase/)
