@@ -23,7 +23,8 @@ import RPi.GPIO as GPIO
 ui = UInput()
 spi = spidev.SpiDev()
 spi.open(0,0)
-spi.max_speed_hz = 1800000
+#spi.max_speed_hz = 1800000
+spi.max_speed_hz = 244000
 
 JUMP_PIN = 12
 FIRE_PIN = 7
@@ -103,7 +104,7 @@ try:
             time.sleep(0.05)
             ui.syn()
 
-        time.sleep(0.1)
+        time.sleep(0.05)
 
 except KeyboardInterrupt:
     print("Exception: KeyboardInterrupt")
