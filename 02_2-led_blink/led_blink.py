@@ -20,7 +20,14 @@ LED_PIN = 12
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(LED_PIN, GPIO.OUT)
 
-try:
+class control_GPIO:
+    def __enter__(self):
+        pass
+    def __exit__(self,type, value, trace):
+        print("Exception: KeyboardInterrupt")
+        GPIO.cleanup()
+
+with control_GPIO():
     while True:
         print("LED is on")
         GPIO.output(LED_PIN, GPIO.HIGH)
@@ -28,10 +35,4 @@ try:
 
         print("LED is off")
         GPIO.output(LED_PIN, GPIO.LOW)
-        time.sleep(1)
-
-except KeyboardInterrupt:
-    print("Exception: KeyboardInterrupt")
-
-finally:
-    GPIO.cleanup()          
+        time.sleep(1)         
