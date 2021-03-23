@@ -12,7 +12,7 @@ The slide is available on [用Raspberry Pi學GPIO - 自己做遊戲機](https://
 
 
 ## Environment
-[Raspberry Pi 4B/2G](https://www.raspberrypi.com.tw/28040/raspberry-pi-4-model-b/)/[Raspberry Pi 3B+](https://www.raspberrypi.com.tw/19429/57/) + SanDisk 32G microSD  + [Raspberry Pi GPIO Game Console Kit](https://www.raspberrypi.com.tw/2557/gpio-game-console-starter-kit/) + 2020-02-13-raspbian-buster-full.img
+[Raspberry Pi 4B/2G](https://www.raspberrypi.com.tw/28040/raspberry-pi-4-model-b/)/[Raspberry Pi 3B+](https://www.raspberrypi.com.tw/19429/57/) + SanDisk 32G microSD  + [Raspberry Pi GPIO Game Console Kit](https://www.raspberrypi.com.tw/2557/gpio-game-console-starter-kit/) + 2021-01-11-raspios-buster-armhf-full.img
 
 ## Prerequisite
 ### Install required package and Python module

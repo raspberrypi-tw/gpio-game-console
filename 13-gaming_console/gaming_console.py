@@ -2,7 +2,7 @@
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #|R|a|s|p|b|e|r|r|y|P|i|.|c|o|m|.|t|w|
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-# Copyright (c) 2019, raspberrypi.com.tw
+# Copyright (c) 2021, raspberrypi.com.tw
 # All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -11,7 +11,7 @@
 # A GPIO joystick with two buttons that can simulate the key events
 #
 # Author : sosorry
-# Date   : 2019/02/20
+# Date   : 2021/02/20
 # Origin : http://python-evdev.readthedocs.org/en/latest/tutorial.html
 
 from evdev import UInput, ecodes as e
